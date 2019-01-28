@@ -14,11 +14,23 @@ if ($_POST['server']){
   $_SESSION['server'] == $_POST['server'];
   header('Location: index.php');
 }
+$username = '';
+if (isset($_SESSION['username'])){
+  $username = $_SESSION['username'];
+}
+$password = '';
+if (isset($_SESSION['password'])){
+  $password = $_SESSION['password'];
+}
+$server = '';
+if (isset($_SESSION['server'])){
+  $server = $_SESSION['server'];
+}
 ?>
 <form method='POST'>
-  <input name='username' value='<?PHP echo $_SESSION['username'];?>'>
-  <input name='password' value='<?PHP echo $_SESSION['password'];?>'>
-  <input name='server' value='<?PHP echo $_SESSION['server'];?>'>
+  <input name='username' value='<?PHP echo $username;?>'>
+  <input name='password' value='<?PHP echo $password;?>'>
+  <input name='server' value='<?PHP echo $server;?>'>
   <input type='submit'>
 </form>
 <hr>
